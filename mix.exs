@@ -14,7 +14,8 @@ defmodule Rest2WS.Mixfile do
   #
   # Type "mix help compile.app" for more information
   def application do
-    [applications: [:logger]]
+    [applications: [:logger],
+     mod: {Rest2WS.App, []}]
   end
 
   # Dependencies can be Hex packages:
@@ -27,6 +28,8 @@ defmodule Rest2WS.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    [{:smart_websocket_client, path: "/home/renato/swc"}]
+    [{:smart_websocket_client, "~> 0.1"},
+     {:plug, "~> 1.2"},
+     {:uuid, "~> 1.1"}]
   end
 end

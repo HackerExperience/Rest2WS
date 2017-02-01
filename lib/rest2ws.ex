@@ -3,7 +3,7 @@ defmodule Rest2WS.App do
   import Supervisor.Spec
 
   @doc false
-  def start(_type, _second) do
+  def start(_app, _type) do
 
     children = [
       worker(Rest2WS.RequestManager, [[], [name: :request_manager]])
